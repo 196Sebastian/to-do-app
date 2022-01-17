@@ -9,7 +9,11 @@
         <entry key="..\:/Users/corre/AndroidStudioProjects/ToDoApp/app/src/main/res/layout/fragment_add.xml" value="0.264" />
         <entry key="..\:/Users/corre/AndroidStudioProjects/ToDoApp/app/src/main/res/layout/fragment_list.xml" value="0.264" />
         <entry key="..\:/Users/corre/AndroidStudioProjects/ToDoApp/app/src/main/res/layout/fragment_update.xml" value="0.1752786220871327" />
+        <entry key="..\:/Users/corre/AndroidStudioProjects/ToDoApp/app/src/main/res/menu-v26/add_fragment.xml" value="0.36041666666666666" />
+        <entry key="..\:/Users/corre/AndroidStudioProjects/ToDoApp/app/src/main/res/menu/add_fragment.xml" value="0.29444444444444445" />
+        <entry key="..\:/Users/corre/AndroidStudioProjects/ToDoApp/app/src/main/res/menu/add_fragment_menu.xml" value="0.29444444444444445" />
         <entry key="..\:/Users/corre/AndroidStudioProjects/ToDoApp/app/src/main/res/menu/list_fragment_menu.xml" value="0.2935185185185185" />
+        <entry key="..\:/Users/corre/AndroidStudioProjects/ToDoApp/app/src/main/res/menu/update_fragment_menu.xml" value="0.29444444444444445" />
       </map>
     </option>
   </component>
