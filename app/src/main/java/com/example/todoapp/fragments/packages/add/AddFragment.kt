@@ -1,4 +1,4 @@
-package com.example.todoapp.fragments.list.add
+package com.example.todoapp.fragments.packages.add
 
 import android.os.Bundle
 import android.view.*
