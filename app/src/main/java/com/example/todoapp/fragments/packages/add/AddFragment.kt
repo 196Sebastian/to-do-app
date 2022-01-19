@@ -10,9 +10,10 @@ import com.example.todoapp.R
 import com.example.todoapp.data.models.ToDoData
 import com.example.todoapp.data.viewmodel.ToDoViewModel
 import com.example.todoapp.databinding.FragmentAddBinding
-import com.example.todoapp.fragments.SharedViewModel
+import com.example.todoapp.fragments.packages.SharedViewModel
+import kotlinx.coroutines.InternalCoroutinesApi
 
-
+@InternalCoroutinesApi
 class AddFragment : Fragment() {
 
     private val mToDoViewModel: ToDoViewModel by viewModels()
@@ -32,7 +33,7 @@ class AddFragment : Fragment() {
         setHasOptionsMenu(true)
 
         // Spinner Item Selected Listener
-        binding.prioritiesSpinner.onItemSelectedListener = mSharedViewModel.listener
+        //binding.prioritiesSpinner.onItemSelectedListener = mSharedViewModel.listener
 
         return binding.root
     }
