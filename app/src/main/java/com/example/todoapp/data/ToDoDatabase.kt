@@ -9,8 +9,8 @@ import com.example.todoapp.data.models.ToDoData
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
 
+@InternalCoroutinesApi
 @Database(entities = [ToDoData::class], version = 1, exportSchema = false)
-@TypeConverters(Converter::class)
 abstract class ToDoDatabase: RoomDatabase() {
 
     abstract fun toDoDao(): ToDoDoa
@@ -19,7 +19,7 @@ abstract class ToDoDatabase: RoomDatabase() {
         @Volatile
         private var INSTANCE: ToDoDatabase? = null
 
-        @InternalCoroutinesApi
+
         fun getDatabase(context: Context): ToDoDatabase {
             val tempInstance = INSTANCE
             if(tempInstance != null){

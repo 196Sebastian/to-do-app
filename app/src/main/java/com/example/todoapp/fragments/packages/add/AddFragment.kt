@@ -1,45 +1,45 @@
 package com.example.todoapp.fragments.packages.add
 
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.*
-import android.widget.EditText
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.todoapp.R
-import com.example.todoapp.data.models.Priority
 import com.example.todoapp.data.models.ToDoData
 import com.example.todoapp.data.viewmodel.ToDoViewModel
-import kotlinx.coroutines.InternalCoroutinesApi
-import org.w3c.dom.Text
+import com.example.todoapp.databinding.FragmentAddBinding
+import com.example.todoapp.fragments.SharedViewModel
 
-@InternalCoroutinesApi
+
 class AddFragment : Fragment() {
 
     private val mToDoViewModel: ToDoViewModel by viewModels()
+    private val mSharedViewModel: SharedViewModel by viewModels()
 
+    private var _binding: FragmentAddBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_add, container, false)
+        _binding = FragmentAddBinding.inflate(layoutInflater, container, false)
 
         // Set Menu
         setHasOptionsMenu(true)
 
-        return view
+        // Spinner Item Selected Listener
+        binding.prioritiesSpinner.onItemSelectedListener = mSharedViewModel.listener
+
+        return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.add_fragment_menu, menu)
     }
-
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menu_add){
@@ -48,48 +48,31 @@ class AddFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-
     private fun insertDataToDb() {
-        val titleEt = view?.findViewById<EditText>(R.id.title_et)
-        val mTitle = titleEt?.text.toString()
+        val mTitle = binding.titleEt.text.toString()
+        val mPriority = binding.prioritiesSpinner.selectedItem.toString()
+        val mDescription = binding.descriptionEt.text.toString()
 
-        val priSpin = view?.findViewById<Spinner>(R.id.priorities_spinner)
-        val mPriority = priSpin?.selectedItem.toString()
-
-        val descriptionEt = view?.findViewById<EditText>(R.id.description_et)
-        val mDescription = descriptionEt?.text.toString()
-
-        val validation = verifyDataFromUser(mTitle, mDescription)
+        val validation = mSharedViewModel.verifyDataFromUser(mTitle, mDescription)
         if(validation){
             // Insert Data to Database
             val newData = ToDoData(
                 0,
                 mTitle,
-                parsePriority(mPriority),
+                mSharedViewModel.parsePriority(mPriority),
                 mDescription
             )
             mToDoViewModel.insertData(newData)
             Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_SHORT).show()
-
             // Navigate Back
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
-        } else{
+        }else{
             Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun verifyDataFromUser(title: String, description: String): Boolean{
-        return if(TextUtils.isEmpty(title) || TextUtils.isEmpty(description)){
-            false
-        }else !(title.isEmpty() || description.isEmpty())
-    }
-
-    private fun parsePriority(priority: String): Priority{
-        return when(priority){
-            "High Priority" -> {Priority.HIGH}
-            "Medium Priority" -> {Priority.MEDIUM}
-            "Low Priority" -> {Priority.LOW}
-            else -> Priority.LOW
-        }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
