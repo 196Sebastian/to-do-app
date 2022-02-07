@@ -1,6 +1,7 @@
 ![](https://github.com/196Sebastian/to-do-app/blob/main/TO-DO_APP.png) 
 
 # Project Description ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F196Sebastian)
+- Maintain our day-to-day tasks or list everything that we have to do.
 
 
 ![todo1](https://user-images.githubusercontent.com/87108242/152803049-c3d8febf-dc87-40b0-910c-c5a8cdeb9720.PNG)
