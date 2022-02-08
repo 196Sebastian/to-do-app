@@ -10,11 +10,7 @@
 
 <img src="https://user-images.githubusercontent.com/87108242/153094001-84b5efb8-e9bc-4910-9b0c-cac19bfd3796.png" width="600" height="600">
 
-
-
-
 # 👨‍💻 The Building Process
 
 
-
-
+<img src="https://user-images.githubusercontent.com/87108242/153094355-13302501-d59e-4d55-88d8-a17c11b5200c.png" width="600" height="600">
