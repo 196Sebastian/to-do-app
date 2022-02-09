@@ -18,3 +18,7 @@
 - Allowed to search data and display results in RecyclerView.
 
 <img src="https://user-images.githubusercontent.com/87108242/153094355-13302501-d59e-4d55-88d8-a17c11b5200c.png" width="600" height="600">
+
+# 🔔 Contact Me!
+
+  [📝 Portfolio](https://sebastiancorrea.netlify.app/) • [💼 Linkedin](https://www.linkedin.com/in/sebastian-correa-b6858b177/) • [🐤 Twitter](https://twitter.com/196Sebastian)
