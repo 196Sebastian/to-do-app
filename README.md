@@ -11,6 +11,10 @@
 <img src="https://user-images.githubusercontent.com/87108242/153094001-84b5efb8-e9bc-4910-9b0c-cac19bfd3796.png" width="600" height="600">
 
 # 👨‍💻 The Building Process
+- Used Navigation Component to navigate through the List, add, and update fragment layouts. 
+- Implement transition animation between fragments.
+- Used type converter to convert priority object to string and to convert string to priority object so when writing to the database converting priority object to string is needed and when reading from our database, we need to convert back the string to the priority object.
+
 
 
 <img src="https://user-images.githubusercontent.com/87108242/153094355-13302501-d59e-4d55-88d8-a17c11b5200c.png" width="600" height="600">
